@@ -67,8 +67,7 @@ def salva_quadrato_in_pdf(tabella, max_colonne_per_pagina=10, max_righe_per_pagi
     pdf.output(buffer)
     buffer.seek(0)
     buffer.close()
-    return buffer
-
+ 
 
 if numero1 > 0:
     tabella = stampa_quadrato_tabelline(numero1)
@@ -83,3 +82,4 @@ if numero1 > 0:
         file_name=f"tabellina_{numero1}.pdf",
         mime="application/pdf"
     )
+
