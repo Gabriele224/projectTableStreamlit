@@ -62,10 +62,9 @@ def salva_quadrato_in_pdf(tabella, max_colonne_per_pagina=10, max_righe_per_pagi
                     pdf.ln(10)
                     pdf.cell(0, 8, txt=f"(continua) Righe {start_riga}-{end_riga} Colonne {start_col}-{end_col}", ln=True, align="C")
         break
-    pdf_content = pdf.output(dest='S').encode('latin1')
-    buffer = BytesIO(pdf_content)
-    pdf.output(buffer)
-    buffer.seek(0)
+     # ✅ Metodo compatibile con Streamlit Cloud
+    pdf_output = pdf.output(dest='S').encode('latin1')  # get PDF as bytes
+    buffer = BytesIO(pdf_output)
     return buffer
  
 
@@ -82,6 +81,7 @@ if numero1 > 0:
         file_name=f"tabellina_{numero1}.pdf",
         mime="application/pdf"
     )
+
 
 
 
