@@ -1,7 +1,6 @@
 import streamlit as st
 from fpdf import *
 from io import BytesIO
-PATH_TABELLINA=r"C:\Users\g.ricca\Documents\projecttabellinastreamlit\PDFTABELLINA\table.pdf"
 
 st.title("Generatore PDF delle Tabelline")
 
@@ -67,7 +66,7 @@ def salva_quadrato_in_pdf(tabella, max_colonne_per_pagina=10, max_righe_per_pagi
     buffer = BytesIO(pdf_content)
     pdf.output(buffer)
     buffer.seek(0)
-    buffer.close()
+    return buffer
  
 
 if numero1 > 0:
@@ -83,5 +82,6 @@ if numero1 > 0:
         file_name=f"tabellina_{numero1}.pdf",
         mime="application/pdf"
     )
+
 
 
