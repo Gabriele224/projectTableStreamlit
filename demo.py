@@ -4,7 +4,7 @@ from io import BytesIO
 
 st.title("Generatore PDF delle Tabelline")
 
-numero1= st.number_input("Inserisci il numero\n",max_value=100)
+numero1= st.number_input("Inserisci il numero\n",max_value=1000)
 
 
 def stampa_quadrato_tabelline(numero1):
@@ -81,6 +81,7 @@ if numero1 > 0:
         file_name=f"tabellina_{numero1}.pdf",
         mime="application/pdf"
     )
+
 
 
 
